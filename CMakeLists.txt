@@ -3,4 +3,5 @@ project(jvmdisassembler C)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(jvmd main.c file.h file.c utils.c utils.h class.c class.h)
+add_library(jvmd STATIC file.c utils.c class.c)
+target_include_directories(jvmd PRIVATE include)
